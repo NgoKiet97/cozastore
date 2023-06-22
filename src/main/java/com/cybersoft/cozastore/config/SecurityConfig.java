@@ -58,6 +58,7 @@ public class SecurityConfig{
                 .and()
                 .authorizeHttpRequests()
                     .antMatchers("/login/**").permitAll()
+                .antMatchers("/product/file/**").permitAll()
                     //Tất cả các link còn lại điều phải chứng thực
                     .anyRequest().authenticated()
                 .and()
