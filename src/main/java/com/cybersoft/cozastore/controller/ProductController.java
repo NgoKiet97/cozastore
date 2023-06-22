@@ -14,6 +14,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.io.FileNotFoundException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -55,7 +56,7 @@ public class ProductController {
     }
 
     @GetMapping("/file/{filename}")
-    public ResponseEntity<?> downloadFileProduct(@PathVariable String filename){
+    public ResponseEntity<?> downloadFileProduct(@PathVariable String filename) throws FileNotFoundException {
         try {
             Path path = Paths.get(rootPath);
             Path pathFile = path.resolve(filename);
@@ -66,10 +67,11 @@ public class ProductController {
                         .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + filename + "\"")
                         .body(resource);
             } else{
-                throw new RuntimeException("Không tìm thấy file");
+                throw new FileNotFoundException("Không tìm thấy file");
+//                        RuntimeException("Không tìm thấy file");
             }
         } catch (Exception e){
-            throw new RuntimeException("Không tìm thấy file");
+            throw new FileNotFoundException("Không tìm thấy file");
         }
 
     }
