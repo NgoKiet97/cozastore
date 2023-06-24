@@ -30,9 +30,14 @@ public class ProductController {
     @Autowired
     IProductService iProductService;
 
-
-
     @GetMapping("/{id}")
+    public ResponseEntity<?> getDetailProduct(@PathVariable int id){
+        BaseResponse baseResponse = new BaseResponse();
+        baseResponse.setData(iProductService.getDetailProduct(id));
+        return new ResponseEntity<>(baseResponse, HttpStatus.OK);
+    }
+
+    @GetMapping("/category/{id}")
     public ResponseEntity<?> getProductByCategoryId(@PathVariable int id){
         BaseResponse baseResponse = new BaseResponse();
         baseResponse.setData(iProductService.getProductByCategoryId(id));
