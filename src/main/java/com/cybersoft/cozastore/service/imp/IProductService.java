@@ -1,6 +1,5 @@
 package com.cybersoft.cozastore.service.imp;
 
-import com.cybersoft.cozastore.entity.ProductEntity;
 import com.cybersoft.cozastore.payload.request.ProductRequest;
 import com.cybersoft.cozastore.payload.response.ProductResponse;
 
