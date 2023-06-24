@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ProductService implements IProductService {
@@ -30,6 +31,7 @@ public class ProductService implements IProductService {
 
         for (ProductEntity productEntity : list){
             ProductResponse productResponse = new ProductResponse();
+            productResponse.setId(productEntity.getId());
             productResponse.setName(productEntity.getName());
             productResponse.setImage(hostname+"/product/file/" + productEntity.getImage());
             productResponse.setPrice(productEntity.getPrice());
@@ -44,7 +46,6 @@ public class ProductService implements IProductService {
     public boolean addProduct(ProductRequest productRequest) {
         try{
             ProductEntity productEntity = new ProductEntity();
-
             productEntity.setName(productRequest.getName());
             productEntity.setImage(productRequest.getFileImage().getOriginalFilename());
             productEntity.setPrice(productRequest.getPrice());
@@ -69,5 +70,21 @@ public class ProductService implements IProductService {
         } catch (Exception e){
             return false;
         }
+    }
+
+    @Override
+    public ProductResponse getDetailProduct(int id) {
+        Optional<ProductEntity> product =  productRepository.findById(id);
+        ProductResponse productResponse = new ProductResponse();
+
+        if(product.isPresent()){
+            productResponse.setId(product.get().getId());
+            productResponse.setPrice(product.get().getPrice());
+            productResponse.setName(product.get().getName());
+            productResponse.setDescription(product.get().getDescription());
+            productResponse.setImage(product.get().getImageDetail());
+        }
+
+        return productResponse;
     }
 }
