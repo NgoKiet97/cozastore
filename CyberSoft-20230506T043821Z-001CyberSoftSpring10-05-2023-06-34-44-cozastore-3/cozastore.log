@@ -23,3 +23,31 @@
 2023-06-25 00:10:37 - Initializing Servlet 'dispatcherServlet'
 2023-06-25 00:10:37 - Completed initialization in 1 ms
 2023-06-25 00:10:37 - Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'text/plain;charset=UTF-8' not supported]
+2023-06-25 00:35:16 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m39s55ms439µs600ns).
+2023-06-25 11:00:46 - Starting CozastoreApplication using Java 17.0.7 on DESKTOP-SV59J3J with PID 22980 (D:\CyberSoft-20230506T043821Z-001\CyberSoft\Spring\10-05-2023-06-34-44-cozastore-3\cozastore\target\classes started by KietDev in D:\CyberSoft-20230506T043821Z-001\CyberSoft\Spring\10-05-2023-06-34-44-cozastore-3\cozastore)
+2023-06-25 11:00:46 - No active profile set, falling back to 1 default profile: "default"
+2023-06-25 11:00:46 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-06-25 11:00:46 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-06-25 11:00:46 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-25 11:00:46 - Finished Spring Data repository scanning in 43 ms. Found 7 JPA repository interfaces.
+2023-06-25 11:00:47 - Tomcat initialized with port(s): 8080 (http)
+2023-06-25 11:00:47 - Initializing ProtocolHandler ["http-nio-8080"]
+2023-06-25 11:00:47 - Starting service [Tomcat]
+2023-06-25 11:00:47 - Starting Servlet engine: [Apache Tomcat/9.0.74]
+2023-06-25 11:00:47 - Initializing Spring embedded WebApplicationContext
+2023-06-25 11:00:47 - Root WebApplicationContext: initialization completed in 1036 ms
+2023-06-25 11:00:47 - HikariPool-1 - Starting...
+2023-06-25 11:00:47 - HikariPool-1 - Start completed.
+2023-06-25 11:00:48 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-06-25 11:00:48 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7f6da0aa, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2fff3e40, org.springframework.security.web.context.SecurityContextPersistenceFilter@298dd01b, org.springframework.security.web.header.HeaderWriterFilter@6a93b80, org.springframework.security.web.authentication.logout.LogoutFilter@50cd68fe, com.cybersoft.cozastore.filter.JwtFilter@36ec519d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2b865b4, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@54f8a28b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@26a3243, org.springframework.security.web.session.SessionManagementFilter@56dcb98a, org.springframework.security.web.access.ExceptionTranslationFilter@527f473a, org.springframework.security.web.access.intercept.AuthorizationFilter@375ce3c4]
+2023-06-25 11:00:49 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-06-25 11:00:49 - LiveReload server is running on port 35729
+2023-06-25 11:00:49 - Starting ProtocolHandler ["http-nio-8080"]
+2023-06-25 11:00:49 - Tomcat started on port(s): 8080 (http) with context path ''
+2023-06-25 11:00:49 - Started CozastoreApplication in 3.519 seconds (JVM running for 4.117)
+2023-06-25 11:01:07 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-06-25 11:01:07 - Initializing Servlet 'dispatcherServlet'
+2023-06-25 11:01:07 - Completed initialization in 1 ms
+2023-06-25 11:08:01 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-06-25 11:08:01 - HikariPool-1 - Shutdown initiated...
+2023-06-25 11:08:01 - HikariPool-1 - Shutdown completed.

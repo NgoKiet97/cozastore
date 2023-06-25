@@ -1,6 +1,6 @@
 package com.cybersoft.cozastore.exception;
 
-public class FileNotFoundException {
+public class FileNotFoundException extends  RuntimeException{
 
     private String message;
 
