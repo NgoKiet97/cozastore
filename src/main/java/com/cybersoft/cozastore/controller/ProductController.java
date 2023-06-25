@@ -37,6 +37,12 @@ public class ProductController {
         return new ResponseEntity<>(baseResponse, HttpStatus.OK);
     }
 
+    @GetMapping("/clear-cache")
+    public ResponseEntity<?> clearCache(){
+        iProductService.clearCache();
+        return new ResponseEntity<>("", HttpStatus.OK);
+    }
+
     @GetMapping("/category/{id}")
     public ResponseEntity<?> getProductByCategoryId(@PathVariable int id){
         BaseResponse baseResponse = new BaseResponse();
