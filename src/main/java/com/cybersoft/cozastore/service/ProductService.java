@@ -8,12 +8,16 @@ import com.cybersoft.cozastore.payload.request.ProductRequest;
 import com.cybersoft.cozastore.payload.response.ProductResponse;
 import com.cybersoft.cozastore.repository.ProductRepository;
 import com.cybersoft.cozastore.service.imp.IProductService;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -23,26 +27,39 @@ public class ProductService implements IProductService {
     @Autowired
     ProductRepository productRepository;
 
+    @Autowired
+    private RedisTemplate redisTemplate;
+
+    private Gson gson = new Gson();
+
     @Value("${host.name}")
     private String hostname;
 
     @Override
-    @Cacheable("getProductByCategoryId")
+//    @Cacheable("getProductByCategoryId")
     public List<ProductResponse> getProductByCategoryId(int id) {
-
-        List<ProductEntity> list = productRepository.findByCategoryId(id);
         List<ProductResponse> responseList = new ArrayList<>();
 
-        for (ProductEntity productEntity : list){
-            ProductResponse productResponse = new ProductResponse();
-            productResponse.setId(productEntity.getId());
-            productResponse.setName(productEntity.getName());
-            productResponse.setImage(hostname+"/product/file/" + productEntity.getImage());
-            productResponse.setPrice(productEntity.getPrice());
+        if(redisTemplate.hasKey("listProductByCategoryID")){
+            String dataProduct = (String) redisTemplate.opsForValue().get("listProductByCategoryID");
+            Type listType = new TypeToken<ArrayList<ProductResponse>>(){}.getType();
+            responseList = new Gson().fromJson(dataProduct, listType);
 
-            responseList.add(productResponse);
+        }else{
+            List<ProductEntity> list = productRepository.findByCategoryId(id);
+            for (ProductEntity productEntity : list){
+                ProductResponse productResponse = new ProductResponse();
+                productResponse.setId(productEntity.getId());
+                productResponse.setName(productEntity.getName());
+                productResponse.setImage(hostname+"/product/file/" + productEntity.getImage());
+                productResponse.setPrice(productEntity.getPrice());
+
+                responseList.add(productResponse);
+            }
+            String dataProduct = gson.toJson(responseList);
+            redisTemplate.opsForValue().set("listProductByCategoryID", dataProduct);
+//            System.out.println(dataProduct);
         }
-
         return responseList;
     }
 
