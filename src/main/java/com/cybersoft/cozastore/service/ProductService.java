@@ -6,6 +6,7 @@ import com.cybersoft.cozastore.entity.ProductEntity;
 import com.cybersoft.cozastore.entity.SizeEntity;
 import com.cybersoft.cozastore.payload.request.ProductRequest;
 import com.cybersoft.cozastore.payload.response.ProductResponse;
+import com.cybersoft.cozastore.repository.ColorRepository;
 import com.cybersoft.cozastore.repository.ProductRepository;
 import com.cybersoft.cozastore.service.imp.IProductService;
 import com.google.gson.Gson;
@@ -25,7 +26,7 @@ import java.util.Optional;
 @Service
 public class ProductService implements IProductService {
     @Autowired
-    ProductRepository productRepository;
+    private ProductRepository productRepository;
 
     @Autowired
     private RedisTemplate redisTemplate;
@@ -61,6 +62,33 @@ public class ProductService implements IProductService {
 //            System.out.println(dataProduct);
         }
         return responseList;
+    }
+
+    @Override
+    public List<ProductResponse> getProductByColorId(int id) {
+        List<ProductResponse> responseList = new ArrayList<>();
+
+        if(redisTemplate.hasKey("listProductByColorID")){
+            String dataProduct = (String) redisTemplate.opsForValue().get("listProductByColorID");
+            Type listType = new TypeToken<ArrayList<ProductResponse>>(){}.getType();
+            responseList = new Gson().fromJson(dataProduct, listType);
+
+        }else{
+            List<ProductEntity> list = productRepository.findByColorId(id);
+            for (ProductEntity productEntity : list){
+                ProductResponse productResponse = new ProductResponse();
+                productResponse.setId(productEntity.getId());
+                productResponse.setName(productEntity.getName());
+                productResponse.setImage(hostname+"/product/file/" + productEntity.getImage());
+                productResponse.setPrice(productEntity.getPrice());
+
+                responseList.add(productResponse);
+            }
+            String dataProduct = gson.toJson(responseList);
+            redisTemplate.opsForValue().set("listProductByColorID", dataProduct);
+        }
+        return responseList;
+
     }
 
     @Override

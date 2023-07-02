@@ -50,6 +50,15 @@ public class ProductController {
 
         return new ResponseEntity<>(baseResponse, HttpStatus.OK);
     }
+
+    @GetMapping("/color/{id}")
+    public ResponseEntity<?> getProductByColorId(@PathVariable int id){
+        BaseResponse baseResponse = new BaseResponse();
+        baseResponse.setData(iProductService.getProductByColorId(id));
+
+        return new ResponseEntity<>(baseResponse , HttpStatus.OK );
+    }
+
     @PostMapping("")
     public ResponseEntity<?> addProduct(@Valid ProductRequest productRequest){
         String fileName = productRequest.getFileImage().getOriginalFilename();
