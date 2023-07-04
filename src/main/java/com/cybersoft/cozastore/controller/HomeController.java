@@ -16,9 +16,6 @@ public class HomeController {
     @Autowired
     private HomeService homeService;
 
-//    Cần phải xác định được kiểu JSON trả ra cho bên FE và để tiện cho BE xử lý chức
-//    năng sau này
-
     @GetMapping("/category")
     public ResponseEntity<?> getAllCategory(){
         BaseResponse response = new BaseResponse();
@@ -27,7 +24,5 @@ public class HomeController {
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
-//    Viết API Lấy toàn bộ danh sách sản phẩm theo category id
-//    Bước 1 : Phải xác định được kiểu JSON trả cho bên FE
-//    Spring Security
+
 }

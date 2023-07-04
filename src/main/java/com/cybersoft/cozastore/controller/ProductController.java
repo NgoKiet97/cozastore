@@ -30,6 +30,14 @@ public class ProductController {
     @Autowired
     IProductService iProductService;
 
+    @GetMapping("/all")
+    public ResponseEntity<?> getAllProduct(){
+        BaseResponse baseResponse = new BaseResponse();
+        baseResponse.setData(iProductService.getAllProduct());
+        return new ResponseEntity<>(baseResponse, HttpStatus.OK);
+    }
+
+
     @GetMapping("/{id}")
     public ResponseEntity<?> getDetailProduct(@PathVariable int id){
         BaseResponse baseResponse = new BaseResponse();
@@ -58,6 +66,7 @@ public class ProductController {
 
         return new ResponseEntity<>(baseResponse , HttpStatus.OK );
     }
+
 
     @PostMapping("")
     public ResponseEntity<?> addProduct(@Valid ProductRequest productRequest){
