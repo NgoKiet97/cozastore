@@ -250,3 +250,105 @@
 2023-07-02 15:11:39 - Closing JPA EntityManagerFactory for persistence unit 'default'
 2023-07-02 15:11:39 - HikariPool-1 - Shutdown initiated...
 2023-07-02 15:11:39 - HikariPool-1 - Shutdown completed.
+2023-07-02 16:20:14 - Starting CozastoreApplication using Java 17.0.7 on DESKTOP-SV59J3J with PID 27164 (D:\CyberSoft-20230506T043821Z-001\CyberSoft\Spring\10-05-2023-06-34-44-cozastore-3\cozastore\target\classes started by KietDev in D:\CyberSoft-20230506T043821Z-001\CyberSoft\Spring\10-05-2023-06-34-44-cozastore-3\cozastore)
+2023-07-02 16:20:14 - No active profile set, falling back to 1 default profile: "default"
+2023-07-02 16:20:14 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-07-02 16:20:14 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-07-02 16:20:15 - Multiple Spring Data modules found, entering strict repository configuration mode
+2023-07-02 16:20:15 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-07-02 16:20:15 - Finished Spring Data repository scanning in 111 ms. Found 7 JPA repository interfaces.
+2023-07-02 16:20:15 - Multiple Spring Data modules found, entering strict repository configuration mode
+2023-07-02 16:20:15 - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-07-02 16:20:15 - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.cybersoft.cozastore.repository.CategoryRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2023-07-02 16:20:15 - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.cybersoft.cozastore.repository.ColorRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2023-07-02 16:20:15 - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.cybersoft.cozastore.repository.OrderDetailRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2023-07-02 16:20:15 - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.cybersoft.cozastore.repository.OrderRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2023-07-02 16:20:15 - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.cybersoft.cozastore.repository.ProductRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2023-07-02 16:20:15 - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.cybersoft.cozastore.repository.SizeRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2023-07-02 16:20:15 - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.cybersoft.cozastore.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2023-07-02 16:20:15 - Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+2023-07-02 16:20:15 - Tomcat initialized with port(s): 8080 (http)
+2023-07-02 16:20:15 - Initializing ProtocolHandler ["http-nio-8080"]
+2023-07-02 16:20:15 - Starting service [Tomcat]
+2023-07-02 16:20:15 - Starting Servlet engine: [Apache Tomcat/9.0.74]
+2023-07-02 16:20:15 - Initializing Spring embedded WebApplicationContext
+2023-07-02 16:20:15 - Root WebApplicationContext: initialization completed in 1163 ms
+2023-07-02 16:20:16 - HikariPool-1 - Starting...
+2023-07-02 16:20:16 - HikariPool-1 - Start completed.
+2023-07-02 16:20:16 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-07-02 16:20:17 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2a059cb0, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@640beba0, org.springframework.security.web.context.SecurityContextPersistenceFilter@2e23bfeb, org.springframework.security.web.header.HeaderWriterFilter@4a4f3358, org.springframework.security.web.authentication.logout.LogoutFilter@7315f4c2, com.cybersoft.cozastore.filter.JwtFilter@69cae6f2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1f9beec1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4d3432f1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7ded6c0f, org.springframework.security.web.session.SessionManagementFilter@3453857d, org.springframework.security.web.access.ExceptionTranslationFilter@58720e89, org.springframework.security.web.access.intercept.AuthorizationFilter@53d3b272]
+2023-07-02 16:20:17 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-07-02 16:20:17 - LiveReload server is running on port 35729
+2023-07-02 16:20:17 - Starting ProtocolHandler ["http-nio-8080"]
+2023-07-02 16:20:17 - Tomcat started on port(s): 8080 (http) with context path ''
+2023-07-02 16:20:17 - Started CozastoreApplication in 3.332 seconds (JVM running for 3.912)
+2023-07-02 16:21:02 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-07-02 16:21:02 - HikariPool-1 - Shutdown initiated...
+2023-07-02 16:21:02 - HikariPool-1 - Shutdown completed.
+2023-07-02 16:25:02 - Starting CozastoreApplication using Java 17.0.7 on DESKTOP-SV59J3J with PID 9760 (D:\CyberSoft-20230506T043821Z-001\CyberSoft\Spring\10-05-2023-06-34-44-cozastore-3\cozastore\target\classes started by KietDev in D:\CyberSoft-20230506T043821Z-001\CyberSoft\Spring\10-05-2023-06-34-44-cozastore-3\cozastore)
+2023-07-02 16:25:02 - No active profile set, falling back to 1 default profile: "default"
+2023-07-02 16:25:02 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-07-02 16:25:02 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-07-02 16:25:03 - Multiple Spring Data modules found, entering strict repository configuration mode
+2023-07-02 16:25:03 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-07-02 16:25:03 - Finished Spring Data repository scanning in 92 ms. Found 7 JPA repository interfaces.
+2023-07-02 16:25:03 - Multiple Spring Data modules found, entering strict repository configuration mode
+2023-07-02 16:25:03 - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-07-02 16:25:03 - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.cybersoft.cozastore.repository.CategoryRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2023-07-02 16:25:03 - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.cybersoft.cozastore.repository.ColorRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2023-07-02 16:25:03 - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.cybersoft.cozastore.repository.OrderDetailRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2023-07-02 16:25:03 - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.cybersoft.cozastore.repository.OrderRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2023-07-02 16:25:03 - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.cybersoft.cozastore.repository.ProductRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2023-07-02 16:25:03 - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.cybersoft.cozastore.repository.SizeRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2023-07-02 16:25:03 - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.cybersoft.cozastore.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2023-07-02 16:25:03 - Finished Spring Data repository scanning in 6 ms. Found 0 Redis repository interfaces.
+2023-07-02 16:25:03 - Tomcat initialized with port(s): 8080 (http)
+2023-07-02 16:25:03 - Initializing ProtocolHandler ["http-nio-8080"]
+2023-07-02 16:25:03 - Starting service [Tomcat]
+2023-07-02 16:25:03 - Starting Servlet engine: [Apache Tomcat/9.0.74]
+2023-07-02 16:25:03 - Initializing Spring embedded WebApplicationContext
+2023-07-02 16:25:03 - Root WebApplicationContext: initialization completed in 1128 ms
+2023-07-02 16:25:04 - HikariPool-1 - Starting...
+2023-07-02 16:25:04 - HikariPool-1 - Start completed.
+2023-07-02 16:25:04 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-07-02 16:25:05 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7ded6c0f, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@a298f8b, org.springframework.security.web.context.SecurityContextPersistenceFilter@1f9beec1, org.springframework.security.web.header.HeaderWriterFilter@62731952, org.springframework.security.web.authentication.logout.LogoutFilter@25105761, com.cybersoft.cozastore.filter.JwtFilter@5673279e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1608e7cc, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@76c9c99, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@c4f7262, org.springframework.security.web.session.SessionManagementFilter@669b8bad, org.springframework.security.web.access.ExceptionTranslationFilter@4a4f3358, org.springframework.security.web.access.intercept.AuthorizationFilter@14cc7ff6]
+2023-07-02 16:25:05 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-07-02 16:25:05 - LiveReload server is running on port 35729
+2023-07-02 16:25:05 - Starting ProtocolHandler ["http-nio-8080"]
+2023-07-02 16:25:05 - Tomcat started on port(s): 8080 (http) with context path ''
+2023-07-02 16:25:05 - Started CozastoreApplication in 3.352 seconds (JVM running for 3.878)
+2023-07-02 16:25:50 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-07-02 16:25:50 - Initializing Servlet 'dispatcherServlet'
+2023-07-02 16:25:50 - Completed initialization in 1 ms
+2023-07-02 17:06:13 - Reconnecting, last destination was localhost/127.0.0.1:6380
+2023-07-02 17:06:13 - Cannot reconnect to [localhost/<unresolved>:6380]: Connection closed prematurely
+io.lettuce.core.RedisConnectionException: Connection closed prematurely
+	at io.lettuce.core.protocol.RedisHandshakeHandler.channelInactive(RedisHandshakeHandler.java:91)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:305)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:281)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelInactive(AbstractChannelHandlerContext.java:274)
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelInactive(ChannelInboundHandlerAdapter.java:81)
+	at io.lettuce.core.ChannelGroupListener.channelInactive(ChannelGroupListener.java:69)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:305)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:281)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelInactive(AbstractChannelHandlerContext.java:274)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelInactive(DefaultChannelPipeline.java:1405)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:301)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:281)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelInactive(DefaultChannelPipeline.java:901)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe$7.run(AbstractChannel.java:813)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:174)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:167)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:470)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:566)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-07-02 17:06:22 - Reconnecting, last destination was localhost/<unresolved>:6380
+2023-07-02 17:06:22 - Cannot reconnect to [localhost/<unresolved>:6380]: Connection refused: no further information: localhost/127.0.0.1:6380
+2023-07-02 17:06:30 - Reconnecting, last destination was localhost/<unresolved>:6380
+2023-07-02 17:06:30 - Cannot reconnect to [localhost/<unresolved>:6380]: Connection refused: no further information: localhost/127.0.0.1:6380
+2023-07-02 17:06:32 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-07-02 17:06:32 - HikariPool-1 - Shutdown initiated...
+2023-07-02 17:06:32 - HikariPool-1 - Shutdown completed.

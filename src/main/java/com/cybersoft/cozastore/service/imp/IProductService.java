@@ -7,6 +7,8 @@ import java.util.List;
 
 public interface IProductService {
 
+    List<ProductResponse> getAllProduct();
+
     List<ProductResponse> getProductByCategoryId(int id);
 
     List<ProductResponse> getProductByColorId(int id);

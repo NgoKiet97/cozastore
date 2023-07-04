@@ -37,6 +37,33 @@ public class ProductService implements IProductService {
     private String hostname;
 
     @Override
+    public List<ProductResponse> getAllProduct() {
+        List<ProductResponse> responseList = new ArrayList<>();
+
+        if(redisTemplate.hasKey("listAllProduct")){
+            String dataProduct = (String) redisTemplate.opsForValue().get("listAllProduct");
+            Type listType = new TypeToken<ArrayList<ProductResponse>>(){}.getType();
+            responseList = new Gson().fromJson(dataProduct, listType);
+
+        }else{
+            List<ProductEntity> list = productRepository.findAll();
+            for (ProductEntity productEntity : list){
+                ProductResponse productResponse = new ProductResponse();
+                productResponse.setId(productEntity.getId());
+                productResponse.setName(productEntity.getName());
+                productResponse.setImage(hostname+"/product/file/" + productEntity.getImage());
+                productResponse.setPrice(productEntity.getPrice());
+
+                responseList.add(productResponse);
+            }
+            String dataProduct = gson.toJson(responseList);
+            redisTemplate.opsForValue().set("listAllProduct", dataProduct);
+//            System.out.println(dataProduct);
+        }
+        return responseList;
+    }
+
+    @Override
 //    @Cacheable("getProductByCategoryId")
     public List<ProductResponse> getProductByCategoryId(int id) {
         List<ProductResponse> responseList = new ArrayList<>();
