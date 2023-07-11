@@ -22,6 +22,7 @@ import java.nio.file.StandardCopyOption;
 
 @RestController
 @RequestMapping("/product")
+@CrossOrigin("*")
 public class ProductController {
 
     @Value("${root.file.path}")
