@@ -1,6 +1,6 @@
 <configuration>
 
-    <property name="cozastorelog" value="D:\CyberSoft-20230506T043821Z-001\CyberSoft\Spring\10-05-2023-06-34-44-cozastore-3"/>
+    <property name="cozastorelog" value="D:\\CyberSoft-20230506T043821Z-001\\CyberSoft\\Spring\\10-05-2023-06-34-44-cozastore-3"/>
 
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
         <layout class="ch.qos.logback.classic.PatternLayout">
