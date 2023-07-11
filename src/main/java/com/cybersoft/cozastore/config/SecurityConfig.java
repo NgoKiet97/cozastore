@@ -58,8 +58,11 @@ public class SecurityConfig{
                 .and()
                 .authorizeHttpRequests()
                     .antMatchers("/login/**").permitAll()
-                .antMatchers("/product/file/**").permitAll()
-                    //Tất cả các link còn lại điều phải chứng thực
+                    .antMatchers("/category/**").permitAll()
+                    .antMatchers("/product/file/**").permitAll()
+                    .antMatchers("/product/category/**").permitAll()
+                    .antMatchers("/product/**").permitAll()
+                //Tất cả các link còn lại điều phải chứng thực
                     .anyRequest().authenticated()
                 .and()
                 .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class)
