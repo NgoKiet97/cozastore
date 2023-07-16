@@ -67,13 +67,6 @@ public class ProductService implements IProductService {
 //    @Cacheable("getProductByCategoryId")
     public List<ProductResponse> getProductByCategoryId(int id) {
         List<ProductResponse> responseList = new ArrayList<>();
-
-        if(redisTemplate.hasKey("listProductByCategoryID")){
-            String dataProduct = (String) redisTemplate.opsForValue().get("listProductByCategoryID");
-            Type listType = new TypeToken<ArrayList<ProductResponse>>(){}.getType();
-            responseList = new Gson().fromJson(dataProduct, listType);
-
-        }else{
             List<ProductEntity> list = productRepository.findByCategoryId(id);
             for (ProductEntity productEntity : list){
                 ProductResponse productResponse = new ProductResponse();
@@ -81,13 +74,8 @@ public class ProductService implements IProductService {
                 productResponse.setName(productEntity.getName());
                 productResponse.setImage(hostname+"/product/file/" + productEntity.getImage());
                 productResponse.setPrice(productEntity.getPrice());
-
                 responseList.add(productResponse);
             }
-            String dataProduct = gson.toJson(responseList);
-            redisTemplate.opsForValue().set("listProductByCategoryID", dataProduct);
-//            System.out.println(dataProduct);
-        }
         return responseList;
     }
 
@@ -164,9 +152,9 @@ public class ProductService implements IProductService {
         return productResponse;
     }
 
-    @Override
-    @CacheEvict(value = "getProductByCategoryId", allEntries = true)
-    public boolean clearCache() {
-        return true;
-    }
+//    @Override
+//    @CacheEvict(value = "getProductByCategoryId", allEntries = true)
+//    public boolean clearCache() {
+//        return true;
+//    }
 }
